@@ -35,7 +35,7 @@ public class UserController {
         System.out.println(user);
         druidDataSource.close();
         connection.close();
-        return null;
+        return user;
     }
 
     @GetMapping("/test")
