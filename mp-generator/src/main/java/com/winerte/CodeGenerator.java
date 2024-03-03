@@ -43,8 +43,8 @@ public class CodeGenerator {
 
         autoGenerator.setDataSource(dsc);
 
-        //4、策略配置
-        StrategyConfig sy = new StrategyConfig();
+        //4、策略配置 ，可以单个设置对应的表
+ /*       StrategyConfig sy = new StrategyConfig();
         sy.setInclude("user");//设置要映射的表，可以设置多张
         sy.setNaming(NamingStrategy.underline_to_camel);//从数据库表到文件的命名策略,下划线转驼峰命名
         sy.setColumnNaming(NamingStrategy.underline_to_camel);//列的命名策略
@@ -60,7 +60,7 @@ public class CodeGenerator {
         tableFills.add(create_time);
         tableFills.add(update_time);
         autoGenerator.setStrategy(sy);
-
+*/
 
         // 包配置
         PackageConfig pc = new PackageConfig();
