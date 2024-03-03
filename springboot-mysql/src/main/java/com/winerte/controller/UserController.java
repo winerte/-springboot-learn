@@ -26,9 +26,11 @@ public class UserController {
 
     @GetMapping("/get/{id}")
     public User getUserById(@PathVariable("id") String id) throws Exception {
+        //打印传入的id
         System.out.println(id);
         Connection connection = dataSource.getConnection();
         DruidDataSource druidDataSource = (DruidDataSource) dataSource;
+        //打印连接池最大数量
         System.out.println(druidDataSource.getMaxActive());
         String sql = "select * from user where id= ?";
         User user = jdbcTemplate.queryForObject(sql, new BeanPropertyRowMapper<>(User.class), id);
