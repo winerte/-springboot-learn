@@ -25,13 +25,13 @@ public class UserController {
     private JdbcTemplate jdbcTemplate;
 
     @GetMapping("/get/{id}")
-    public User getUserById(@PathVariable("id")String id) throws Exception {
+    public User getUserById(@PathVariable("id") String id) throws Exception {
         System.out.println(id);
         Connection connection = dataSource.getConnection();
         DruidDataSource druidDataSource = (DruidDataSource) dataSource;
         System.out.println(druidDataSource.getMaxActive());
-        String sql="select * from user where id= ?";
-       User user = jdbcTemplate.queryForObject(sql,new BeanPropertyRowMapper<>(User.class),id);
+        String sql = "select * from user where id= ?";
+        User user = jdbcTemplate.queryForObject(sql, new BeanPropertyRowMapper<>(User.class), id);
         System.out.println(user);
         druidDataSource.close();
         connection.close();
@@ -39,7 +39,7 @@ public class UserController {
     }
 
     @GetMapping("/test")
-    private String test(){
+    private String test() {
         return "test";
     }
 }
