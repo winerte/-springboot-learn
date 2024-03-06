@@ -16,7 +16,8 @@ public class MongoController {
     @GetMapping("/test")
     public String test() {
         User user = new User();
-        user.setId("1");
+        user.setId(1L);
+        user.setMemberId("123456");
         user.setName("winerte");
         userService.save(user);
         return "user saved";
